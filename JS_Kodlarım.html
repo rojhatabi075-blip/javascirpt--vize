@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Ödevlerim</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1A1A1A;
+            color: #f4f4f4;
+            margin: 20px;
+        }
+        .form-container {
+            background: #2c2c2c;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            width: 300px;
+            margin: 30px auto;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #D4AF37;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #444;
+            border-radius: 4px;
+            background: #1a1a1a;
+            color: #fff;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #D4AF37;
+            color: #1a1a1a;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #c19b2e;
+        }
+        h2, h3 {
+            color: #D4AF37;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>JavaScript Ödevleri</h2>
+
+    <script>
+        // --- 5. BÖLÜM ÖDEVİ ---
+        document.write("<h3>5. Bölüm Ödevleri</h3>");
+        
+        let sayi1 = Number(prompt("Bir sayı giriniz (1 artırılacak):"));
+        sayi1 = sayi1 + 1;
+        document.write("Girilen sayının 1 fazlası: <b>" + sayi1 + "</b><br>");
+
+        let s1 = Number(prompt("1. sayıyı girin:"));
+        let s2 = Number(prompt("2. sayıyı girin:"));
+        let s3 = Number(prompt("3. sayıyı girin:"));
+        let ortalama = (s1 + s2 + s3) / 3;
+        alert("3 sayının ortalaması: " + ortalama);
+        document.write("3 sayının ortalaması (alert ile gösterildi): " + ortalama + "<br><br>");
+
+
+        // --- 6. BÖLÜM ÖDEVİ ---
+        document.write("<h3>6. Bölüm Ödevleri</h3>");
+
+        let vize1Not = Number(prompt("1. Vize Notu:"));
+        let vize2Not = Number(prompt("2. Vize Notu:"));
+        let finalNot = Number(prompt("Final Notu:"));
+        let dersNotu = ((vize1Not + vize2Not) / 2) * 0.4 + finalNot * 0.6;
+
+        if (dersNotu < 50) {
+            document.write("Geçti/Kaldı Durumu: Kaldı (Not: " + dersNotu + ")<br>");
+        } else {
+            document.write("Geçti/Kaldı Durumu: Geçti (Not: " + dersNotu + ")<br>");
+        }
+
+        let sicaklik = Number(prompt("Hava sıcaklığını girin:"));
+        if (sicaklik < 0) {
+            document.write("Hava Durumu: Dondurucu<br><br>");
+        } else if (sicaklik < 15) {
+            document.write("Hava Durumu: Soğuk<br><br>");
+        } else if (sicaklik < 25) {
+            document.write("Hava Durumu: Ilık<br><br>");
+        } else {
+            document.write("Hava Durumu: Sıcak<br><br>");
+        }
+
+
+        // --- 8. BÖLÜM ÖDEVİ ---
+        document.write("<h3>8. Bölüm Ödevleri</h3>");
+
+        function ucgenAlani(taban, yukseklik) {
+            return (taban * yukseklik) / 2;
+        }
+        document.write("Üçgenin Alanı (Taban: 10, Yükseklik: 5): " + ucgenAlani(10, 5) + "<br>");
+
+        function cemberHesapla(yaricap) {
+            let cevre = 2 * 3.14 * yaricap;
+            let alan = 3.14 * yaricap * yaricap;
+            document.write("Çember (Yarıçap: 4) -> Çevre: " + cevre + ", Alan: " + alan + "<br><br>");
+        }
+        cemberHesapla(4);
+
+
+        // --- 9. BÖLÜM ÖDEVİ ---
+        document.write("<h3>9. Bölüm Ödevleri</h3>");
+
+        let genislik = Number(prompt("Dikdörtgenin genişliğini girin:"));
+        let yukseklik = Number(prompt("Dikdörtgenin yüksekliğini girin:"));
+
+        class Dikdortgen {
+            constructor(g, y) {
+                this.genislik = g;
+                this.yukseklik = y;
+            }
+            alan() {
+                return this.genislik * this.yukseklik;
+            }
+            cevre() {
+                return 2 * (this.genislik + this.yukseklik);
+            }
+        }
+
+        let d = new Dikdortgen(genislik, yukseklik);
+        document.write("Dikdörtgen Alanı: " + d.alan() + "<br>");
+        document.write("Dikdörtgen Çevresi: " + d.cevre() + "<br><br>");
+
+
+        // --- 10. BÖLÜM ÖDEVİ ---
+        document.write("<h3>10. Bölüm Ödevleri</h3>");
+
+        let kSayi = Number(prompt("Karekökü alınacak sayıyı girin:"));
+        document.write("Karekökü: " + Math.sqrt(kSayi) + "<br>");
+
+        document.write("Rastgele 5 Sayı:<br>");
+        for (let i = 0; i < 5; i++) {
+            document.write("- " + Math.random() * 100 + "<br>");
+        }
+
+        let r = Number(prompt("Çember için yarıçap girin (Math.PI ile):"));
+        document.write("Math.PI Alan: " + (Math.PI * r * r) + "<br>");
+        document.write("Math.PI Çevre: " + (2 * Math.PI * r) + "<br>");
+
+        let metin = prompt("Büyük harfe çevrilecek metni girin:");
+        document.write("Büyük Harf Hali: " + metin.toUpperCase() + "<br><br>");
+    </script>
+
+
+    <!-- --- 13. BÖLÜM ÖDEVİ (FORM KONTROLÜ) --- -->
+    <div class="form-container">
+        <h2>Form Doğrulama</h2>
+        <form id="myForm" onsubmit="return kontrolEt()">
+            <div class="form-group">
+                <label for="ad">Adınız:</label>
+                <input type="text" id="ad" name="ad">
+            </div>
+            
+            <div class="form-group">
+                <label for="vize1">Vize 1 Notu:</label>
+                <input type="number" id="vize1" name="vize1">
+            </div>
+
+            <button type="submit">Gönder</button>
+        </form>
+    </div>
+
+    <script>
+        function kontrolEt() {
+            // 1. İd değeri "ad" olan alanın kontrolü
+            var adDegeri = document.getElementById("ad").value.trim();
+            if (adDegeri === "") {
+                alert("Lütfen adınızı giriniz");
+                return false; 
+            }
+
+            // 2. İd değeri "vize1" olan alanın kontrolü
+            var vize1Degeri = Number(document.getElementById("vize1").value);
+            if (vize1Degeri < 0 || vize1Degeri > 100) {
+                alert("Lütfen geçerli bir değer giriniz");
+                return false; 
+            }
+
+            alert("Form başarıyla gönderildi!");
+            return true;
+        }
+    </script>
+
+</body>
+</html>
